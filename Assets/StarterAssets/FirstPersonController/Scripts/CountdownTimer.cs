@@ -34,6 +34,5 @@ public class CountdownTimer : MonoBehaviour
         {
             VictoryText.SetActive(true);
         }
-        Debug.Log(Enemies.Length);
     }
 }
