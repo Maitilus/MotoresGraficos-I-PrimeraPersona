@@ -10,12 +10,12 @@ public class ScoreCounter : MonoBehaviour
 
     void Start()
     {
-        ScoreText.text = $"Score: {Score.CurrentScore}/{Score.TotalCoins.Length}";
+        ScoreText.text = $"Score: {Score.CurrentScore}/{Score.TotalCoins.Length} \n Enemies Left: {Score.TotalEnemies.Length / 2}";
     }
 
     void Update()
     {
-        ScoreText.text = $"Score: {Score.CurrentScore}/{Score.TotalCoins.Length}";
+        ScoreText.text = $"Score: {Score.CurrentScore}/{Score.TotalCoins.Length} \n Enemies Left: {Score.TotalEnemies.Length / 2}";
     }
 }
     

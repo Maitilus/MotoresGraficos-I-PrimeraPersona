@@ -8,6 +8,9 @@ public class PlayerScore : MonoBehaviour
 {
    public int CurrentScore; 
    public GameObject[] TotalCoins;
+   public int EnemiesKilled;  
+   public GameObject[] TotalEnemies;
+   public Healthbar PlayerHealth;
 
     private void OnTriggerEnter(Collider PickUp)
     {
@@ -23,5 +26,21 @@ public class PlayerScore : MonoBehaviour
     private void Start()
     {
       TotalCoins = GameObject.FindGameObjectsWithTag("Coin");
+      TotalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+      Cursor.visible = false;
+      Cursor.lockState = CursorLockMode.Locked; 
+    }
+
+    void Update()
+    {
+      TotalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    void OnCollisionEnter(Collision Hit)
+    {
+      if (Hit.gameObject.CompareTag("Enemy"))
+      {
+        PlayerHealth.TakeDamage(10);
+      }
     }
 }

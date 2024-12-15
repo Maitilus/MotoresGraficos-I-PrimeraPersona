@@ -9,6 +9,7 @@ public class bullet : MonoBehaviour
     public GameObject[] Enemies;
     public GameObject OnHitEffect;
     public float Damage = 30f;
+    public PlayerScore PlayerScore;
 
 
     void Awake()
@@ -16,7 +17,7 @@ public class bullet : MonoBehaviour
         Destroy(gameObject, life);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
